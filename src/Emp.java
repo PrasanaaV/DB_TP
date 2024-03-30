@@ -1,3 +1,6 @@
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 
 public class Emp {
@@ -20,7 +23,7 @@ public class Emp {
 
     private int tel;
 
-    private DeptDAO department;
+    private Dept department;
 
     public Long getEmpNo() {
         return empNo;
@@ -94,11 +97,24 @@ public class Emp {
         this.tel = tel;
     }
 
-    public DeptDAO getDepartment() {
+    public Dept getDepartment() {
         return department;
     }
 
-    public void setDepartment(DeptDAO department) {
+    public void setDepartment(Dept department) {
+        this.department = department;
+    }
+
+    public Emp(Long empNo, String ename, String efirst, String job, Emp mgr, Date hireDate, int sal, int comm, int tel, Dept department) {
+        this.empNo = empNo;
+        this.ename = ename;
+        this.efirst = efirst;
+        this.job = job;
+        this.mgr = mgr;
+        this.hireDate = hireDate;
+        this.sal = sal;
+        this.comm = comm;
+        this.tel = tel;
         this.department = department;
     }
 }

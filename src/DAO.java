@@ -8,7 +8,7 @@ public abstract class DAO<T> {
         this.connect = connect;
     }
 
-    public abstract Dept find(int id) throws SQLException;
+    public abstract T find(int id) throws SQLException;
 
     public abstract boolean create(T object);
 
